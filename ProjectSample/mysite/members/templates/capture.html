@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture Image</title>
+</head>
+<body>
+    <video id="webcam" autoplay width="100%" height="100%"></video>
+    <button id="captureBtn">Capture Image</button>
+    <p id="message"></p>
+    <script>
+        const video = document.getElementById('webcam');
+        const captureBtn = document.getElementById('captureBtn');
+        const message = document.getElementById('message');
+        let stream;
+
+        // Start capturing the video stream from the camera
+        function startCamera() {
+            navigator.mediaDevices.getUserMedia({
+                video: {
+                    width: { ideal: 1920 },
+                    height: { ideal: 1080 },
+                    facingMode: 'user'
+                }
+            })
+            .then(videoStream => {
+                stream = videoStream;
+                video.srcObject = videoStream;
+                captureBtn.disabled = false; // Enable the capture button
+            })
+            .catch(error => {
+                console.log('An error occurred while accessing the camera:', error);
+            });
+        }
+
+        // Capture and send the image to the server
+        function captureAndSendImage() {
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0);
+
+            // Convert the canvas image to a Blob (binary data)
+            canvas.toBlob(function(blob) {
+                // Create a FormData object to send the image file to the server
+                const formData = new FormData();
+                formData.append('image', blob, 'image.png');
+                formData.append('person_id', '123'); // Replace '123' with the actual person ID
+
+                // Send the image data and person ID to the server using fetch
+                fetch('{% url "capture" %}', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-CSRFToken': '{{ csrf_token }}',
+                    },
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        console.log("You are present");
+                        message.innerText = "Image saved and processed successfully! Your attendance is marked as present.";
+                    } else {
+                        console.log(data.message);
+                    }
+                })
+                .catch(function() {
+                    console.log('Error occurred while sending image to the server.');
+                });
+            }, 'image/png');
+        }
+
+        captureBtn.addEventListener('click', captureAndSendImage);
+
+        // Start the camera when the page loads
+        startCamera();
+    </script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+{% load static %}
+<!DOCTYPE html>
+<!---Coding By CodingLab | www.codinglabweb.com--->
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Ecology Theme">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Login</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/bootstrap.min.css">
+    <!-- Font awsome CSS -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/flaticon.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/magnific-popup.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/owl.carousel.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/owl.theme.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/animate.css">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/slick.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/preloader.css" />
+
+    <!-- Revolution Slider -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/revolution/layers.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/revolution/navigation.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/revolution/settings.css">
+    <!-- Mean Menu-->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/meanmenu.css">
+    <!-- main style-->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/style.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/responsive.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/demo.css">
+</head>
+  <body style="background-color: #162238;">
+    <div class="intro_wrapper">
+          
+      <div class="centered-content">
+          <div class="intro_text">
+              <h2 style="margin-top: 40px; text-align: center; color: white;"><b>User Login Page</b></h2>
+          </div>
+      </div>
+      
+      </div>
+      <div class="card" style="width: 50%; margin-left: 350px; margin-top: 50px;">
+        <form action="{% url 'members:login' %}" method="post" class="form">
+          {% csrf_token %}
+          <div class="input-box">
+            <label>Enter Username</label>
+            <input type="text" name="username" placeholder="Enter email" required />
+          </div>
+          <div class="input-box">
+            <label>Enter Password</label>
+            <input type="password" name="password" placeholder="password" required />
+          </div>
+          <button type="submit" style="background-color: #162238;">Login</button>
+        </form>
+      </div>
+      
+      <p style=" margin-left: 350px; color: white;">Don't have an account? <a href="{% url 'members:register' %}">Sign Up</a></p>
+    </section>
+    <script>
+      // Get the modal
+      var modal = document.getElementById('id01');
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+  </script>
+  <!-- JavaScript -->
+  <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js'  %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <!-- Revolution Slider -->
+  <script src="{% static 'js/assets/revolution/jquery.themepunch.revolution.min.js' %}"></script>
+  <script src="{% static 'js/assets/revolution/jquery.themepunch.tools.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/slick.min.js' %}"></script>
+  <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+  <!-- Counter Script -->
+  <script src="{% static 'js/waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+  <script src="{% static 'js/wow.min.js' %}"></script>
+  <!-- Revolution Extensions -->
+  <script src="{% static 'js/assets/revolution/extensions/revolution.extension.carousel.min.js' %}"></script>
+  <script src="{% static 'js/assets/revolution/extensions/revolution.extension.actions.min.js' %}"></script>
+  <script src="{% static 'js/assets/revolution/extensions/revolution.extension.kenburn.min.js' %}"></script>
+  <script src="{% static 'js/assets/revolution/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+  <script src="{% static 'js/assets/revolution/extensions/revolution.extension.migration.min.js' %}"></script>
+  <script src="{% static 'js/assets/revolution/extensions/revolution.extension.navigation.min.js' %}"></script>
+  <script src="{% static 'js/assets/revolution/extensions/revolution.extension.parallax.min.js' %}"></script>
+  <script src="{% static 'js/assets/revolution/extensions/revolution.extension.slideanims.min.js' %}"></script>
+  <script src="{% static 'js/assets/revolution/extensions/revolution.extension.video.min.js' %}"></script>
+  <script src="{% static 'js/assets/revolution/revolution.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhrdEzlfpnsnfq4MgU1e1CCsrvVx2d59s"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>
+
+
+<style>
+    
+  body {
+      font-family: Arial, Helvetica, sans-serif;
+  }
+
+  /* Full-width input fields */
+  input[type=text],
+  input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+  }
+
+  /* Set a style for all buttons */
+  button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+  }
+
+  button:hover {
+      opacity: 0.8;
+  }
+
+  /* Extra styles for the cancel button */
+  .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+  }
+
+  /* Center the image and position the close button */
+  .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+  }
+
+  img.avatar {
+      width: 40%;
+      border-radius: 50%;
+  }
+
+  .container {
+      padding: 16px;
+  }
+
+  span.psw {
+      float: right;
+      padding-top: 16px;
+  }
+
+  /* The Modal (background) */
+  .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+      padding-top: 60px;
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto;
+      /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 80%;
+      /* Could be more or less, depending on screen size */
+  }
+
+  /* The Close Button (x) */
+  .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+      color: red;
+      cursor: pointer;
+  }
+
+  /* Add Zoom Animation */
+  .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+  }
+
+  @-webkit-keyframes animatezoom {
+      from {
+          -webkit-transform: scale(0)
+      }
+
+      to {
+          -webkit-transform: scale(1)
+      }
+  }
+
+  @keyframes animatezoom {
+      from {
+          transform: scale(0)
+      }
+
+      to {
+          transform: scale(1)
+      }
+  }
+
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+      span.psw {
+          display: block;
+          float: none;
+      }
+
+      .cancelbtn {
+          width: 100%;
+      }
+      
+  }
+  .container {
+  max-width: 800px;
+  margin:  auto;
+  margin-top: 30px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift effect */
+  background-color: #fff;
+  border-radius: 5px; /* Rounded edges for the container */
+}
+
+label {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+  border-color: #49638d;
+  box-shadow: 0 0 5px rgba(73, 99, 141, 0.5);
+  outline: none;
+}
+
+.form-group a {
+  color: #49638d;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.form-group a:hover {
+  text-decoration: underline;
+  color: #334c74; /* Darker shade for hover */
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  background-color: #334c74;
+  transform: translateY(-2px); /* Small upward lift on hover */
+}
+
+.btn:active {
+  transform: translateY(0px); /* Reset position when pressed */
+}
+
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+  
+  
+</style>

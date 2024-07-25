@@ -1,0 +1,304 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Ecology Theme">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance management System</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/bootstrap.min.css">
+    <!-- Font awsome CSS -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/flaticon.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/magnific-popup.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/owl.carousel.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/owl.theme.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/animate.css">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/slick.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/preloader.css" />
+
+    <!-- Revolution Slider -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/revolution/layers.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/revolution/navigation.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/revolution/settings.css">
+    <!-- Mean Menu-->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/meanmenu.css">
+    <!-- main style-->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/style.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/responsive.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/demo.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <style>
+        .navbar {
+    position: fixed;  /* Using fixed positioning instead of sticky */
+    top: 0;
+    left: 0;         /* Ensure it stretches the full width */
+    right: 0;
+    z-index: 1000;   /* Ensure it's above other content */
+}
+.navbar {
+          position: sticky;
+          top: 0;
+          z-index: 100;
+          background-color: #0B1E42;
+          transition: all 0.3s ease;
+          height: 80px; /* Adjust navbar height */
+        }
+        .navbar-brand, .nav-link {
+          color: white !important;
+          font-weight: bold;
+          border-radius: 5px; /* Add border radius to buttons */
+          padding: 10px; /* Added padding for buttons to look better with border radius */
+        }
+        .navbar-nav .nav-link {
+          margin-right: 1rem;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+          color: #0B1E42 !important;
+          background-color: white;
+        }
+        .navbar-brand img {
+      height: 70px; /* Adjust as needed */
+      width: auto;
+      margin-left: 20px;
+      border-radius: 25px;
+    }
+    body {
+   
+    background-color: #dcdce3;
+}
+
+.container {
+    max-width: 900px;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+        border-radius: 20px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px 30px;
+    background-color: #fff;
+}
+
+.card-body h5 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.card-title {
+    border-bottom: 2px solid #0B1E42;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #7f8c8d;
+}
+
+.card-text strong {
+    color: #000001;
+    display: block;
+    margin-bottom: auto;
+    margin-bottom: -10PX;
+
+}
+
+        .sidebar {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #343a40, #232728);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sidebar h4 {
+    color: white  ;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.sidebar a {
+    color: white;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 5px 10px;
+}
+
+.sidebar a i {
+    margin-right: 10px;  /* Space between the icon and the text */
+}
+
+.sidebar a:hover, .sidebar a.active {
+    color: #fff;
+    background-color: #495057;
+    text-decoration: none;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+            <img src="{%static 'images/banner/down.png' %}" alt="Brand Logo"> <!-- Your image here -->
+          </a>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'members:dashboard'%}">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'members:teacher_profile'%}">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'members:contact'%}">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+        <!-- End Header -->
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar">
+                <h4 class="text-white text-center">Person Dashboard</h4>
+                <a href="{% url 'members:stdashboard' %}">Profile</a>
+                <a href="{% url 'members:recognize' %}">Recognize</a>
+                <a href="{% url 'members:view_my_attendance' %}">My Attendance</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'members:logout' %}">Logout</a>
+                {% endif %}
+            </div>
+        
+        <div class="centered-content">
+          <div class="intro_text">
+              <h2 style="margin-top: 30px; color: #0B1E42; text-align: center;"><b>Attendance Management System</b></h2>
+          </div>
+      
+      
+      </div>
+        <div class="container mt-5" >
+          <div class="row" style="margin-top: -550px; margin-left:200px;">
+           
+              
+              <div class="col-md-8">
+                <div class="card" style="padding: 10px 20px;">
+                  <div class="card-body" style="border-radius: 10px; color: black;">
+                    <h5 class="card-title"><b>Student Information</b></h5>
+                    <p class="card-text" >
+                      <p style="font-weight: 500; color: black; " >Name: {{ student.user.first_name }} {{ student.user.last_name }}</p>
+                      <p style="font-weight: 500; color: black;">Department: {{ student.department }}</p>
+                        <!--  <p style="font-weight: 500; color: black;">Image: {{ student.image }}</p> -->
+
+                      <p style="font-weight: 500; color: black;">Roll Number: {{ student.roll_no }}</p>
+                      <p style="font-weight: 500; color: black;">Gender: {{ student.gender }}</p>
+                       <p style="font-weight: 500; color: black;" >Phone: {{ student.phone }}</p>
+                       <p style="font-weight: 500; color: black;">Registration Date: {{ student.registration_date }}</p>
+
+                      <!-- Add other fields as required... -->
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+                      </div>
+      </div>
+      
+    
+<!-- Contact Info Wrappper-->
+<!-- Footer --> 
+
+
+<!-- End Footer -->
+
+<section id="scroll-top" class="scroll-top">
+    <h2 class="disabled">Scroll to top</h2>
+    <div class="to-top pos-rtive">
+        <a href="#"><i class = "flaticon-right-arrow"></i></a>
+    </div>
+</section>
+
+    <!--  JavaScript -->
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>     
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>  
+    <script src="{% static 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAhrdEzlfpnsnfq4MgU1e1CCsrvVx2d59s' %}"></script>
+    <script src="{% static 'js/map-helper.js' %}"></script>     
+    <script src="{% static 'js/slick.min.js' %}"></script>   
+    <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>  
+    <script src="{% static 'js/wow.min.js' %}"></script> 
+    <!-- Counter Script -->
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script> 
+
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.carousel.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.actions.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.kenburn.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.migration.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.navigation.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.parallax.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.slideanims.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.video.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/revolution.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script> 
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+</body>
+
+
+</html>

@@ -1,0 +1,440 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Ecology Theme">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Register</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/bootstrap.min.css">
+    <!-- Font awsome CSS -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/flaticon.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/magnific-popup.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/owl.carousel.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/owl.theme.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/animate.css">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/slick.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/preloader.css" />
+
+    <!-- Revolution Slider -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/revolution/layers.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/revolution/navigation.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/revolution/settings.css">
+    <!-- Mean Menu-->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/meanmenu.css">
+    <!-- main style-->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/style.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/responsive.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/demo.css">
+
+
+</head>
+
+<body>
+
+    <div class="intro_wrapper">
+          
+        <div class="centered-content">
+            <div class="intro_text">
+                <h2 style="margin-top: 30px; text-align: center; color: white" ><b>Admin Register Page</b></h2>
+            </div>
+        </div>
+        
+        </div>
+
+    <div class="container">
+        <form class="container mt-4" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>First Name</label>
+                    <input type="text" class="form-control" name="first_name" id="first_name"
+                        placeholder="Enter First Name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" name="last_name" id="last_name"
+                        placeholder="Enter Last Name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password1" id="password1"
+                        placeholder="Enter Password">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Confirm Password</label>
+                    <input type="password" class="form-control" name="password2" id="password2"
+                        placeholder="Confirm Password">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>Email Id</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email Id">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Username</label>
+                    <input type="email" class="form-control" name="username" id="username" placeholder="Enter Email Id">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Contact Number</label>
+                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter Contact Number">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>Gender</label>
+                    <div style="border: 1px solid lightgrey; padding: 5px; border-radius: 6px;">
+                        <div class="form-check form-check-inline ml-md-4">
+                            <input type="radio" class="custom-control-input" name="gender" id="male" value="Male">
+                            <label for="male" class="custom-control-label">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline ml-md-3">
+                            <input type="radio" class="custom-control-input" name="gender" id="female" value="Female">
+                            <label for="female" class="custom-control-label">Female</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <p><b>Already Have an Account</b> <a href="{% url 'members:adLogin' %}">Login Here</a></p>
+                </div>
+            </div>
+            <input type="hidden"  role="admin">
+            <input type="submit" value="Sign Up" class="btn ml-md-5"
+            style="background-color: #111B51; color: white; font-size: larger; width: 60rem;  display: block;
+            margin-left: auto;
+            margin-right: auto;
+           ">
+        </form>
+    </div>
+
+
+
+    </script>
+    <!-- JavaScript -->
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js'  %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Revolution Slider -->
+    <script src="{% static 'js/assets/revolution/jquery.themepunch.revolution.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/jquery.themepunch.tools.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+    <!-- Counter Script -->
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <!-- Revolution Extensions -->
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.carousel.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.actions.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.kenburn.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.migration.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.navigation.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.parallax.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.slideanims.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.video.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/revolution.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
+<style>
+    body {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        background-color: #0B1E42;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Full-width input fields */
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    /* Add a background color when the inputs get focus */
+    input[type=text]:focus,
+    input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #04AA6D;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    button:hover {
+        opacity: 1;
+    }
+
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+        padding: 14px 20px;
+        background-color: #f44336;
+    }
+
+    /* Float cancel and signup buttons and add an equal width */
+    .cancelbtn,
+    .signupbtn {
+        float: left;
+        width: 50%;
+    }
+
+    /* Add padding to container elements */
+    .container {
+        padding: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: #474e5d;
+        padding-top: 50px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto;
+        /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%;
+        /* Could be more or less, depending on screen size */
+    }
+
+    /* Style the horizontal ruler */
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+    /* The Close Button (x) */
+    .close {
+        position: absolute;
+        right: 35px;
+        top: 15px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #f1f1f1;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #f44336;
+        cursor: pointer;
+    }
+
+    /* Clear floats */
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    /* Change styles for cancel button and signup button on extra small screens */
+    @media screen and (max-width: 300px) {
+
+        .cancelbtn,
+        .signupbtn {
+            width: 100%;
+        }
+    }
+
+    body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0B1E42;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.messages {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.messages li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.messages li.error {
+    background-color: #f8d7da;
+    border-left: 5px solid #f5c6cb;
+    color: #721c24;
+}
+
+.messages li.success {
+    background-color: #d4edda;
+    border-left: 5px solid #c3e6cb;
+    color: #155724;
+}
+
+.form-control {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border 0.3s;
+}
+
+.form-control:focus {
+    border-color: #4f868c;
+    outline: none;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input[type="submit"].btn {
+    cursor: pointer;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    background-color: #4f868c;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"].btn:hover {
+    background-color: #3a6b73;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-check-inline {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.custom-control-label {
+    cursor: pointer;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+select:focus {
+    border-color: #4f868c;
+    outline: none;
+}
+label {
+    font-family: 'Arial', sans-serif;     /* Font family for the labels */
+    font-size: 16px;                      /* Font size */
+    color: #333;                          /* Font color */
+    font-weight: bold;                    /* Make the label text bold */
+    margin-bottom: 8px;                   /* Space between the label and its associated input field */
+    display: block;                       /* Make the label a block element so it occupies its own line */
+    transition: color 0.3s;               /* Smooth transition for color changes, if any */
+}
+
+/* Optional: Change label color on hover for interactivity */
+label:hover {
+    color: #4f868c;                       /* A shade of teal color on hover */
+}
+
+/* Optional: If you want a different style for focused inputs' labels */
+input:focus + label {
+    color: #007BFF;                       /* Color change when the associated input is focused */
+}
+</style>

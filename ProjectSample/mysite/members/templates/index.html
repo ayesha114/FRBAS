@@ -1,0 +1,516 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Ecology Theme">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance management System</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/bootstrap.min.css">
+    <!-- Font awsome CSS -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/flaticon.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/magnific-popup.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/owl.carousel.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/owl.theme.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/animate.css">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/slick.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/preloader.css" />
+
+    <!-- Revolution Slider -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/revolution/layers.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/revolution/navigation.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/revolution/settings.css">
+    <!-- Mean Menu-->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/meanmenu.css">
+    <!-- main style-->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/style.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/responsive.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/demo.css">
+
+    <style>
+        body{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .navbar {
+          position: sticky;
+          top: 0;
+          z-index: 100;
+          background-color: #0B1E42;
+          transition: all 0.3s ease;
+          height: 80px; /* Adjust navbar height */
+        }
+        .navbar-brand, .nav-link {
+          color: white !important;
+          font-weight: bold;
+          border-radius: 5px; /* Add border radius to buttons */
+          padding: 10px; /* Added padding for buttons to look better with border radius */
+        }
+        .navbar-nav .nav-link {
+          margin-right: 1rem;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+          color: #0B1E42 !important;
+          background-color: white;
+        }
+        .navbar-brand img {
+      height: 70px; /* Adjust as needed */
+      width: auto;
+      margin-left: 20px;
+      border-radius: 25px;
+    }
+    .hero {
+      height: 80vh;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("/static/images/banner/face.jpg"); /* Replace with your image */
+      background-repeat: no-repeat;
+    background-size: cover;
+    }
+    .hero-content {
+      text-align: center;
+      color: white;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+    }
+    .hero-content p {
+      font-size: 1.5rem;
+    }
+    .hero-content a {
+      margin-top: 1rem;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      color: white;
+      background: #0B1E42;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+    .hero-content a:hover {
+      background: white;
+      color: #0B1E42;
+    }
+    .card {
+            transition: transform .2s;
+            border-radius: 15px;
+            background-color: #10254c;
+            color: white;
+            text-align: center;
+        }
+
+        .card:hover {
+            background-color: rgb(14, 35, 97);
+            color: white;}
+
+            .btn:hover {
+                font-weight: 400;
+            background-color: #0056b3;
+            border-color: #0056b3;
+            color: #0B1E42;
+        }
+
+
+        #face-recognition-module {
+    width: auto;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.content-wrapper {
+    display: flex;
+}
+
+.img-wrapper, .text-wrapper {
+    flex: 1;
+    margin: 10px;
+}
+
+.text-wrapper {
+    padding: 10px;
+}
+
+#face-recognition-module h1, #face-recognition-module h2, #face-recognition-module p {
+    color: #444;
+}
+
+
+ul {
+    list-style-type: disc;
+    padding-left: 1em;
+}
+.text-wrapper ul {
+    list-style-type: disc !important;
+    padding-left: 1em !important;
+}
+
+
+
+
+img {
+    width: 100%;
+    height: auto;
+
+}
+
+.card-1 {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    margin: 1em 0;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card-1:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.content {
+    padding: 1em;
+}
+
+.content h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.content p {
+    margin-top: 0;
+    color: #333;
+    line-height: 1.5;
+}
+      </style>
+
+</head>
+
+<body>
+  
+    <!-- PASTE YOUR PROVIDED HTML CODE HERE -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+            <img src="{%static 'images/banner/down.png' %}" alt="Brand Logo"> <!-- Your image here -->
+          </a>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'members:dashboard'%}">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'members:teacher_profile'%}">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'members:contact'%}">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    
+
+ <!--  End header section-->
+ <section class="hero">
+    <div class="hero-content">
+     
+  </section>
+
+
+
+    <section class="login_signup_option">
+        <div class="l-modal is-hidden--off-flow js-modal-shopify">
+            <div class="l-modal__shadow js-modal-hide"></div>
+            <div class="login_popup login_modal_body">
+                <div class="Popup_title d-flex justify-content-between">
+                    <h2 class="hidden">&nbsp;</h2>
+                    <!-- Nav tabs -->
+                    <div class="row">
+                        <div class="col-12 col-lg-12 col-md-12 col-lg-12 login_option_btn">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#login"
+                                        role="tab">Login</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#panel2"
+                                        role="tab">Register</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-lg-12 col-md-12 col-lg-12">
+                            <!-- Tab panels -->
+                            <div class="tab-content card">
+                                <!--Login-->
+                                <div class="tab-pane fade in show active" id="login" role="tabpanel">
+                                    <form action="#">
+                                        <div class="row">
+                                            <div class="col-12 col-lg-12 col-md-12 col-lg-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Email</label>
+                                                    <input type="email" class="form-control" placeholder="Username">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-12 col-md-12 col-lg-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Password</label>
+                                                    <input type="password" class="form-control" placeholder="Password">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div
+                                                class="col-12 col-lg-12 col-md-12 col-lg-12 d-flex justify-content-between login_option">
+                                                <a href="forgot-password/" title="" class="forget_pass">Forget Password
+                                                    ?</a>
+                                                <button type="submit" class="btn btn-default login_btn">Login</button>
+                                            </div>
+                                            <div class="col-12 col-lg-12 col-md-12 col-lg-12">
+                                                <div class="social_login">
+                                                    <div class="social_items">
+                                                        <button class="google_login google">Login Google</button>
+                                                        <button class="google_login facebook">Login Facebook</button>
+                                                        <button class="google_login twitter">Login Twitter</button>
+                                                        <button class="google_login linkdin">Login Linkdin</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!--/.Panel 1-->
+                                <!--Panel 2-->
+                                <div class="tab-pane fade" id="panel2" role="tabpanel">
+                                    <form action="#" class="register">
+                                        <div class="row">
+                                            <div class="col-12 col-lg-12 col-md-12 col-lg-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Name</label>
+                                                    <input type="text" class="form-control" placeholder="Username">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-12 col-md-12 col-lg-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Email</label>
+                                                    <input type="email" class="form-control" placeholder="Email">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-12 col-md-12 col-lg-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Password</label>
+                                                    <input type="password" class="form-control" placeholder="Password">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div
+                                                class="col-12 col-lg-12 col-md-12 col-lg-12 d-flex justify-content-between login_option">
+                                                <button type="submit"
+                                                    class="btn btn-default login_btn">Register</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div><!--/.Panel 2-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <!-- End Login Signup Option -->
+    <section class="card-1" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+        <div class="container">
+            <div class="row" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="content" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                        <h3 style="margin-top: 45px;font-family: Georgia, 'Times New Roman', Times, serif;"><b>Importance of Student Attendance Management System</b>
+                        </h3><br>
+                        <p style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;">Facial recognition attendance management software designed for teachers enables you to monitor their attendance in online classes or on campus. Utilizing advanced facial recognition technology, it accurately tracks the presence or absence of students, providing a hassle-free and streamlined process. In addition, teachers can manage, review, and record absences or presence of students, while also accessing detailed reports for attendance. We offering a convenient platform for both students and educational institutions.
+                        <br><br>The management of data within the database is handled through Python, which interfaces with
+the face recognition library and the database. Python's extensive library support provides robust
+tools for database interactions.
+The Face Recognition Library's role is twofold. First, it processes the face data during login and
+registration processes, extracting the necessary facial features. Second, it facilitates the
+comparison of the live-captured face data with the stored facial data during the attendance
+marking process. Following are the main components of our system:
+                        </p>
+                    </div><!-- ends: .section-header -->
+                </div>
+
+                
+            
+    </section>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card" >
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: white;">Student</h5>
+                        <p class="card-text" style="color: rgb(223, 219, 219);">The Student Module serves as an integral part of the Attendance Management System using
+                            face recognition, facilitating students to register their presence swiftly and accurately. </p>
+                        <a href="{% url 'members:login' %}" class="btn " style="background-color: white;">Login</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"  style="color: white;">Teacher</h5>
+                        <p class="card-text" style="color:  rgb(223, 219, 219);">The Teacher Module is designed to provide a comprehensive platform for educators to access
+                            and manage their students' attendance records and also register new students</p>
+                        <a href="{% url 'members:teLogin' %}" class="btn" style="background-color: white;">Login</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: white;">Admin</h5>
+                        <p class="card-text" style="color:  rgb(223, 219, 219);">The Administrator Module is have authority to Attendance Management System,
+                            allowing for system management, user administration, and overall supervision of the system</p>
+                        <a href="{% url 'members:adLogin' %}" class="btn" style="background-color: white;">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+   <!-- ./ End Courses Area section -->
+
+
+   <section id="face-recognition-module">
+    <div class="content-wrapper">
+        <div class="img-wrapper">
+            <img src="{%static 'images/banner/123.png' %}" alt="Face Recognition">
+        </div>
+        <div class="text-wrapper">
+            <h2 style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;"><b>Face Recognition Module</b></h2><br>
+            <p style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;">Our Attendance Management System is designed to be user-friendly, efficient, and secure. It
+                utilizes face recognition to automate the attendance process, eliminating the need for manual
+                roll calls or sign-ins. The Face Recognition module is a crucial part of our Attendance Management System, functioning as the main method for user identification.</p>
+            <ul >
+              
+                <li ><p style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;"><b>1.</b> The module is designed to perform face detection, feature extraction, and face recognition, using key libraries such as OpenCV and the Face Recognition library.</p></li>
+                <li><p style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;"><b>2.</b>The module utilizes OpenCV's Haar cascades for face detection and the Face Recognition library for feature extraction and face recognition.</p></li>
+                <li><p style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;"><b>3.</b>The system is designed to recognize faces from multiple angles, using the 68-point facial landmark detection model provided by the Face Recognition library, ensuring accurate face recognition regardless of variations.</p></li>
+                <li><p style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;"><b>4. </b>The system also includes a
+                    database for storing user profiles, face images, and attendance records.</p></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<footer class="footer_2 ">
+    <div class="container">
+        <div class="footer_top">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="footer_single_col footer_intro">
+                        <p>Government College University, Faisalabad has emerged as a leading center of learning and research in a short span of time. </p>
+                    </div>
+                </div>
+              
+                <div class="col-12 col-md-6 col-lg-2">
+                    <div class="footer_single_col information">
+                        <h3>information</h3>
+                        <ul class="quick_inf0">
+                            <li><a href="{% url 'members:dashboard'%}">Dashboard</a></li>
+                            <li><a href="{% url 'members:teacher_profile'%}">Profile</a></li>
+                            <li><a href="https://gcuf.edu.pk/scholarships">Scholarship</a></li>
+                            <li><a href="https://gcuf.edu.pk/admissions">Admission</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="footer_single_col contact">
+                        <h3>Contact Us</h3>
+                        <p>Feel free to get in touch us via Phone or send us an e-mail.</p>
+                        <div class="contact_info">
+                            <span>+92-41-9200886</span>
+                            <span class="email">info@gcuf.edu.pk</span>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shapes_bg">
+        <img src="{% static 'images/shapes/testimonial_2_shpe_1.png' %}" alt="" class="shape_3">        
+        <img src="{% static 'images/shapes/footer_2.png' %}" alt="" class="shape_1">
+    </div>    
+</footer><!-- End Footer -->
+
+    <section id="scroll-top" class="scroll-top">
+        <h2 class="disabled">Scroll to top</h2>
+        <div class="to-top pos-rtive">
+            <a href="#"><i class="flaticon-right-arrow"></i></a>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="{% static '/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static '/js/popper.min.js'  %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Revolution Slider -->
+    <script src="{% static 'js/assets/revolution/jquery.themepunch.revolution.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/jquery.themepunch.tools.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+    <!-- Counter Script -->
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <!-- Revolution Extensions -->
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.carousel.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.actions.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.kenburn.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.migration.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.navigation.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.parallax.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.slideanims.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.video.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/revolution.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.card').on('mouseenter', function () {
+                $(this).find('.btn-primary').removeClass('btn-primary').addClass('btn-secondary');
+            });
+            $('.card').on('mouseleave', function () {
+                $(this).find('.btn-secondary').removeClass('btn-secondary').addClass('btn-primary');
+            });
+        });
+    </script>
+  
+</body>
+
+
+</html>
+

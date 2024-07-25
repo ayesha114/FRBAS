@@ -1,0 +1,346 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Ecology Theme">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/bootstrap.min.css">
+    <!-- Font awsome CSS -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/flaticon.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/magnific-popup.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/owl.carousel.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/owl.theme.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/animate.css">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/slick.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/preloader.css" />
+
+    <!-- Revolution Slider -->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/revolution/layers.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/revolution/navigation.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/revolution/settings.css">
+    <!-- Mean Menu-->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/assets/meanmenu.css">
+    <!-- main style-->
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/style.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/responsive.css">
+    <link rel="stylesheet" href="https://www.ecologytheme.com/theme/eduwise/css/demo.css">
+</head>
+
+<body>
+
+
+
+        <div class="intro_wrapper">
+          
+            <div class="centered-content">
+                <div class="intro_text">
+                    <h2 style="margin-top: 30px;"><b>Admin Login Page</b></h2>
+                </div>
+            </div>
+            
+            </div>
+       
+    </header> <!-- End Header -->
+    <div class="container">
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-danger{% endif %}" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <form class="container mt-4" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="row mt-4">
+                <div class="form-group col-md-12">
+                    <label>Username</label>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username">
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="form-group col-md-12">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password" id="password"
+                        placeholder="Enter Password">
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="form-group col-md-12">
+                    <input type="submit" value="Login" class="btn"
+                        style="background-color: #111B51; color: white; font-size: larger; width: 30rem;  display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                       ">
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+   <!-- End Footer -->
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <!-- JavaScript -->
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js'  %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Revolution Slider -->
+    <script src="{% static 'js/assets/revolution/jquery.themepunch.revolution.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/jquery.themepunch.tools.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+    <!-- Counter Script -->
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <!-- Revolution Extensions -->
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.carousel.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.actions.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.kenburn.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.migration.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.navigation.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.parallax.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.slideanims.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/extensions/revolution.extension.video.min.js' %}"></script>
+    <script src="{% static 'js/assets/revolution/revolution.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Full-width input fields */
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    /* Set a style for all buttons */
+   
+    button:hover {
+        opacity: 0.8;
+    }
+
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+    }
+
+    /* Center the image and position the close button */
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
+    }
+
+    img.avatar {
+        width: 40%;
+        border-radius: 50%;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+        padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto;
+        /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%;
+        /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: red;
+        cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+        from {
+            -webkit-transform: scale(0)
+        }
+
+        to {
+            -webkit-transform: scale(1)
+        }
+    }
+
+    @keyframes animatezoom {
+        from {
+            transform: scale(0)
+        }
+
+        to {
+            transform: scale(1)
+        }
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+
+        .cancelbtn {
+            width: 100%;
+        }
+    }
+
+    .container {
+    max-width: 700px;
+    margin:  auto;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift effect */
+    background-color: #fff;
+    border-radius: 5px; /* Rounded edges for the container */
+}
+
+label {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #070000;
+    font-weight: bold;
+    display: block;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+    border-color: #49638d;
+    box-shadow: 0 0 5px rgba(73, 99, 141, 0.5);
+    outline: none;
+}
+
+.form-group a {
+    color: #49638d;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.form-group a:hover {
+    text-decoration: underline;
+    color: #334c74; /* Darker shade for hover */
+}
+
+.btn {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+    background-color: #334c74;
+    transform: translateY(-2px); /* Small upward lift on hover */
+}
+
+.btn:active {
+    transform: translateY(0px); /* Reset position when pressed */
+}
+
+h2{
+    text-align: center;
+}
+
+
+
+    
+
+
+</style>
